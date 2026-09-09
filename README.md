@@ -1,8 +1,8 @@
 # Voice Coding Agent
 
-A real-time voice-controlled coding assistant for macOS. Speak naturally while looking at your editor — the agent hears you, sees your screen, reads and edits your code, runs commands, and talks back.
+A real-time voice-controlled coding assistant for macOS. Speak naturally while looking at your editor; the agent hears you, sees your screen, reads and edits your code, runs commands, and talks back.
 
-> Say "there are red errors in this file, can you fix them?" — it takes a screenshot of your screen, reads the source file, diagnoses the issue, and applies a surgical diff. Then tells you what it changed in one sentence.
+> Say "there are red errors in this file, can you fix them?"; it takes a screenshot of your screen, reads the source file, diagnoses the issue, and applies a surgical diff. Then tells you what it changed in one sentence.
 
 ---
 
@@ -18,9 +18,9 @@ Mic → VAD → Deepgram STT → Claude (streaming + tools) → Kokoro TTS → S
                                     └── list_directory
 ```
 
-Text streams from Claude to TTS one sentence at a time — you hear the first sentence while Claude is still generating the rest. Time-to-first-audio is around 500ms.
+Text streams from Claude to TTS one sentence at a time, you hear the first sentence while Claude is still generating the rest. Time-to-first-audio is around 500ms.
 
-On the first turn, the agent discovers your project structure automatically by scanning the workspace. It injects the full file tree into its system prompt so it always uses exact paths — no guessing, no "file not found" errors. Works with any project you point it at.
+On the first turn, the agent discovers your project structure automatically by scanning the workspace. It injects the full file tree into its system prompt so it always uses exact paths; no guessing, no "file not found" errors. Works with any project you point it at.
 
 When you stop talking for a while, Deepgram's connection drops naturally. The next time you speak, it reconnects in about 200ms. No keepalive spam, no reconnect noise in the terminal.
 
